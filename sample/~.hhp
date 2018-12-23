@@ -1,0 +1,69 @@
+
+
+# main0:
+#   t = geti
+#   a[0] = t
+#   t = geti
+#   a[1] = t
+#   t = geti
+#   i = t
+#   t = 2
+#   i %= t
+#   t = a[i]
+#   puti t
+#   ! exit
+main0:
+  t = geti
+  x = t
+  ! loop_cond
+loop_cond:
+  i++
+  t = i
+  swap t, x
+  x -= t
+  t = x
+  t? +exit -loop_body # exit if x > a[0]
+loop_body:
+  t = a[1]
+  x = t
+  t = 3
+  x %= t
+  t = x
+  t? +x_not3 -x_3
+x_not3:
+  t = a[1]
+  x = t
+  t = 5
+  x %= t
+  t = x
+  t? +x_x -x_buzz
+x_3:
+  t = 'F'
+  putb t
+  t = 'i'
+  putb t
+  t = 'z'
+  putb t
+  putb t
+  t = a[1]
+  x = t
+  t = 5
+  x %= t
+  t? +x_end -x_buzz
+x_x:
+  t = a[1]
+  puti t
+  ! x_end
+x_buzz:
+  t = 'B'
+  putb t
+  t = 'u'
+  putb t
+  t = 'z'
+  putb t
+  putb t
+  ! x_end
+x_end:
+  t = "\n"
+  putb t
+  ! loop_cond

@@ -1,0 +1,41 @@
+@main0:
+  ! input_loop
+input_loop:
+  t = getb
+  t ? +input_loop_body -input_loop_end
+input_loop_body:
+  x = t
+  t = '0'
+  x -= t
+  t = x
+  a[i] = t
+  i++
+  ! input_loop
+input_loop_end:
+  i = 0
+  ! output_loop
+output_loop:
+  t = a[i]
+  x = t
+  t = 5
+  i += t # i = i0 + 5
+  t = a[i]
+  x *= t
+  t = 7
+  i += t # i = i0 + 12
+  t = a[i]
+  x *= t
+  t = 5
+  i += t # i = i0 + 17
+  t = a[i]
+  x *= t
+  t = x
+  puti t
+  t = 65
+  i -= t # i = i0 - 48
+  t = i
+  t ? +@exit -output_loop_forward
+output_loop_forward:
+  t = 49
+  i += t # i = i0 + 1
+  ! output_loop

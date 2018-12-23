@@ -1,0 +1,22 @@
+@main0  input_loop  
+input_loop ,  input_loop_body input_loop_end
+input_loop_body ="L~&{=*48='-{=R&}*"R&'L~&00]"){ input_loop  
+input_loop_end =*= output_loop  
+output_loop 'L~&00[="L~&{=*5'+{=R&}*"='L~&00[='*{=R&}*"*7'+{=R&}*"='L~&00[='*{=R&}*"*5'+{=R&}*"='L~&00[='*{=R&}*"R&!A'-{=R&}*"==R&=  @exit output_loop_forward
+output_loop_forward *49'+{=R&}*"= output_loop  
+@main5  @main5_loop  
+@main5_loop }{N~"' @get_forward  
+@get_forward   @get_forward_body @get_forward_end
+@get_forward_body 'd{=-'R& @get_forward  
+@get_forward_end P"=R&' @get_backward  
+@get_backward R&"L~&'  @get_backward_tmp @get_backward_end
+@get_backward_tmp  @get_backward  
+@get_backward_end =*=}{{*"*"=] @main5_loop  
+@main1  @main1_loop  
+@main1_loop }{N~"' @set_forward  
+@set_forward   @set_forward_body @set_forward_end
+@set_forward_body 'd{=-'R&}{R&"L~&{P"' @set_forward  
+@set_forward_end R&"L~&"L~&{{ @set_backward  
+@set_backward }{  @set_backward_tmp set_backward_end
+@set_backward_tmp  @set_backward  
+@set_backward_end *"[ @main1_loop  
